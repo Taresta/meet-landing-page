@@ -82,11 +82,19 @@ nav {
 .btn.blue span {
   color: #8fe3f9;
 }
+.btn.blue:hover, .btn.blue:focus {
+  cursor: pointer;
+  background-color: #71c0d4;
+}
 .btn.purple {
   background-color: #855fb1;
 }
 .btn.purple span {
   color: #d9b8ff;
+}
+.btn.purple:hover, .btn.purple:focus {
+  cursor: pointer;
+  background-color: #b18bdd;
 }
 
 .main-content {
@@ -166,8 +174,8 @@ footer {
   z-index: 5;
 }
 .footer-cta .hero {
+  background: linear-gradient(0deg, rgba(77, 150, 169, 0.85), rgba(77, 150, 169, 0.85)), url("../mobile/image-footer.jpg") no-repeat center/cover;
   padding: 64px 32px;
-  background: linear-gradient(0deg, rgba(77, 150, 169, 0.85), rgba(77, 150, 169, 0.85)), url(../mobile/image-footer.jpg) no-repeat center/cover;
 }
 .footer-cta .hero .content {
   display: flex;
@@ -213,7 +221,7 @@ footer {
     font-family: "Red Hat Display", sans-serif;
   }
   .footer-cta .hero {
-    background: linear-gradient(0deg, rgba(77, 150, 169, 0.85), rgba(77, 150, 169, 0.85)), url(../tablet/image-footer.jpg) no-repeat center/cover;
+    background: linear-gradient(0deg, rgba(77, 150, 169, 0.85), rgba(77, 150, 169, 0.85)), url("../tablet/image-footer.jpg") no-repeat center/cover;
   }
   .footer-cta .hero .content {
     width: 80%;
@@ -265,7 +273,7 @@ footer {
     font-family: "Red Hat Display", sans-serif;
   }
   .footer-cta .hero {
-    background: linear-gradient(0deg, rgba(77, 150, 169, 0.85), rgba(77, 150, 169, 0.85)), url(../desktop/image-footer.jpg) no-repeat center/cover;
+    background: linear-gradient(0deg, rgba(77, 150, 169, 0.85), rgba(77, 150, 169, 0.85)), url("../desktop/image-footer.jpg") no-repeat center/cover;
   }
   .footer-cta .hero .content {
     flex-direction: row;

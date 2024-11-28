@@ -112,7 +112,12 @@ $s-200: 16px;
     } @else {
       @warn "Invalid preset passed to text-preset mixin!";
     }
-  }
+}
+
+@mixin hero-background($url) {
+  background: linear-gradient(0deg, rgba($cyan-600, 0.85), rgba($cyan-600, 0.85)), 
+  url($url) no-repeat center/cover;
+}
 
   *, 
   *::after,
@@ -194,11 +199,24 @@ $s-200: 16px;
       color: $cyan-300;
     }
   }
+
+  &.blue:hover, 
+  &.blue:focus {
+    cursor: pointer;
+    background-color: #71c0d4;
+  }
+
   &.purple {
     background-color: $purple-600;
     span {
       color: $purple-300;
     }
+  }
+
+  &.purple:hover,
+  &.purple:focus {
+    cursor: pointer;
+    background-color: #b18bdd;
   }
   
 }
@@ -278,9 +296,10 @@ footer {
     z-index: 5;
   }
   .hero {
+    
+    @include hero-background("../mobile/image-footer.jpg");
     padding: $s-800 $s-400;
-    background: linear-gradient(0deg, rgba($cyan-600, 0.85),rgba($cyan-600, 0.85)),
-                url(../mobile/image-footer.jpg) no-repeat center/cover;
+    
     .content {
       display: flex;
       flex-direction: column;
@@ -324,9 +343,9 @@ footer {
   }
   .footer-cta {
     .hero {
-      background: linear-gradient(0deg, rgba($cyan-600, 0.85),rgba($cyan-600, 0.85)),
-      url(../tablet/image-footer.jpg) no-repeat center/cover;
 
+      @include hero-background("../tablet/image-footer.jpg");
+      
       .content {
         width: 80%;
         margin: 0 auto;
@@ -378,9 +397,9 @@ footer {
 
   .footer-cta {
     .hero {
-      background: linear-gradient(0deg, rgba($cyan-600, 0.85),rgba($cyan-600, 0.85)),
-      url(../desktop/image-footer.jpg) no-repeat center/cover;
+      @include hero-background("../desktop/image-footer.jpg");
 
+      
       .content {
         flex-direction: row;
         text-align:left;
