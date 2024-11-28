@@ -16,8 +16,6 @@ This is a solution to the [Meet landing page challenge on Frontend Mentor](https
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -29,20 +27,15 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Desktop](./assets/desktop/Desktop.png)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
+![Mobile](./assets/mobile/Mobile.png)
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution URL](https://github.com/Taresta/meet-landing-page.git)
+- Live Site URL: [Live URL](https://your-live-site-url.com)
 
 ## My process
 
@@ -53,59 +46,45 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- SASS
 
 ### What I learned
+I had learned more properties of SASS. As this been a project focused on responsive design, I learned how setting a width on the child element can effect its parent element's size as well. In my picture element, I had initially did not set any width for the image element present inside it, which makes the parent grow along with its child element. However, on setting a fixed width for the child element, the picture element's width became unaffected by the width of the child, and was governed by the properties of its parent flex container. It might seem like something obvious, but it did make me spend quite some time in aligning my header's hero images properly according to the deisgn.
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I also learned the use of SASS mixin functions. It helps a lot in consolidating many lines of code and reduce redundancies. 
+I was also a bit at loss for giving a proper width to the footer button element as it was a child of the flexbox, but that got resolved when I found out that it can be done by setting its flex-shrink to 0, this was the text inside the button element did not get wrapped to the next line and I was able to make it look similar to the design.
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+@mixin text-preset($preset) {
+    @if $preset != null {
+      font-weight: map-get($preset, weight);
+      font-size: map-get($preset, size);
+      line-height: map-get($preset, line-height);
+      font-family: map-get($preset, family);
+    } @else {
+      @warn "Invalid preset passed to text-preset mixin!";
+    }
 }
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+
+@mixin hero-background($url) {
+  background: linear-gradient(0deg, rgba($cyan-600, 0.85), rgba($cyan-600, 0.85)), 
+  url($url) no-repeat center/cover;
 }
+
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+ I would like to continue to work on my responsive design techniques, and continue to improve my understanding of SASS.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [SASS Official Documentation](https://sass-lang.com/) - This is the prefect resource for learning and improving one's understanding of SASS.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Website - [GitHub Website](https://github.com/Taresta)
+- Frontend Mentor - [Paradox](https://www.frontendmentor.io/profile/Taresta)
 
 ## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Thanks to my teacher, all the amazing resources and all the people who encourage me to continue imprving and moving forward.
