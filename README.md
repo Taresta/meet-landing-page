@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution URL](https://github.com/Taresta/meet-landing-page.git)
-- Live Site URL: [Live URL](https://your-live-site-url.com)
+- Solution URL: [Solution URL](https://taresta.github.io/meet-landing-page/)
+- Live Site URL: [Live URL](https://taresta.github.io/meet-landing-page/)
 
 ## My process
 
